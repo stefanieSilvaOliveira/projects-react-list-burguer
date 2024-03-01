@@ -12,6 +12,7 @@ import comboBurguer from '../../assets/burguer-tomate.png';
 import iconBurguer from '../../assets/logo-country.png'
 
 
+
 function Home(){
 
     const [orders, setUsers] = useState([]);
@@ -21,14 +22,14 @@ function Home(){
 
     
     async function addNewUser(){
-        const {data: orderNew} = await axios.post('http://localhost:3001/order', {
+        const {data: orderNew} = await axios.post('https://first-projects-node-burguer.vercel.app/', {
             name:  inputName.current.value,
             order: inputOrder.current.value,
         });
 
         setUsers([...orders, orderNew]);
     
-        history.push('/order');
+        history.push('order');
     
     }   
 
