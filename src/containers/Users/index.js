@@ -19,7 +19,7 @@ function Users(){
 
     useEffect(() => {
         async function fetchUsers(){
-            const {data: newOrders} = await axios.get('http://localhost:3001/order');
+            const {data: newOrders} = await axios.get('https://first-projects-node-burguer.vercel.app/');
             setUsers(newOrders);
         }
         fetchUsers()
@@ -27,7 +27,7 @@ function Users(){
 
    
     async function deleteOrder(orderId) {
-        await axios.delete(`http://localhost:3001/order/${orderId}`);
+        await axios.delete(`https://first-projects-node-burguer.vercel.app/${orderId}`);
         
         const newOrders = orders.filter((order) => order.id !== orderId);
         
